@@ -21,7 +21,12 @@ public class StatisticController {
 
     @GetMapping(path = "/withers/killed")
     public StatisticEntity getWitherKillAmount() {
-        return statisticRepository.findByType(StatisticType.WITHERS_KILLED);
+        StatisticEntity statistic = statisticRepository.findByType(StatisticType.WITHERS_KILLED);
+        if (statistic == null) {
+            statistic = new StatisticEntity(StatisticType.WITHERS_KILLED, 0);
+            return statisticRepository.save(statistic);
+        }
+        return statistic;
     }
 
     @PostMapping(path = "/withers/killed", params = "amount")
