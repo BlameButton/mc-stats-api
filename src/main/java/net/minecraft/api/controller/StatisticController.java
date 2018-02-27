@@ -5,7 +5,6 @@ import net.minecraft.api.entity.type.StatisticType;
 import net.minecraft.api.repository.StatisticRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.annotation.ApplicationScope;
 
 @CrossOrigin
 @RestController("minecraft-api-controller")
