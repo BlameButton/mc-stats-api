@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.annotation.ApplicationScope;
 
-@ApplicationScope
+@CrossOrigin
 @RestController("minecraft-api-controller")
 @RequestMapping(path = "/api")
 public class StatisticController {
