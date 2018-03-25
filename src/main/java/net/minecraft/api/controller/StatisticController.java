@@ -39,10 +39,10 @@ public class StatisticController {
         return statisticRepository.save(statistic);
     }
 
-    @PostMapping(path = "/withers/killed/reset", params = "amount")
-    public StatisticEntity addWitherKillAmount() {
+    @PostMapping(path = "/withers/killed/reset")
+    public StatisticEntity reset(@RequestParam(name = "amount", defaultValue = "0") int amount) {
         StatisticEntity statistic = statisticRepository.findByType(StatisticType.WITHERS_KILLED);
-        statistic.setIntValue(0);
+        statistic.setIntValue(amount);
         return statisticRepository.save(statistic);
     }
 }
